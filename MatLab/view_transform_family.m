@@ -1,0 +1,16 @@
+
+clc;
+clear;
+close all;
+
+transform_families = {'shift', ...
+                      'shift_scale_by_x', ...
+                      'shift_scale_by_y', ...
+                      'shift_isotropic_scale', ...
+                      'shift_anisotropic_scale', ...
+                      'full_affine'};
+num_families = size(transform_families, 2); 
+for family = 1:num_families
+    transform_families{family}
+    S = apply_transform_family(transform_families{family})
+end
