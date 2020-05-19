@@ -38,11 +38,9 @@ FontSize = 20;
 
 A = [L_2_optimal_transforms{6}.A; 0 0 1];
 V = A*H^(-1);
-frame_input = imread('pic/frame.png');
+frame_input = imread('../pic/frame.png');
 tic
-for iii = 1:1
-    frame_proj        = projectTransformImage(frame_input, H^(-1));
-end
+frame_proj        = projectTransformImage(frame_input, H^(-1));
 toc
 frame_affin =  affineTransformImage(frame_input, A^(-1));
 ax_lim.x = [0 size(frame_input,2)];
@@ -62,8 +60,8 @@ set(gca,'xTick',Ticks);
 set(gca,'yTick',Ticks);
 xlabel('pixels','FontSize', FontSize);
 ylabel('pixels','FontSize', FontSize);
-save_plot(fig,'pic/fig_input.png');
-imwrite(frame_input, 'pic/frame_input.png');
+save_plot(fig,'../pic/fig_input.png');
+imwrite(frame_input, '../pic/frame_input.png');
 
 fig = figure();
 hold on;
@@ -82,8 +80,8 @@ set(gca,'xTick',Ticks);
 set(gca,'yTick',Ticks);
 xlabel('pixels','FontSize', FontSize);
 ylabel('pixels','FontSize', FontSize);
-save_plot(fig,'pic/fig_proj.png');
-imwrite(frame_proj, 'pic/frame_proj.png');
+save_plot(fig,'../pic/fig_proj.png');
+imwrite(frame_proj, '../pic/frame_proj.png');
 
 fig = figure();
 hold on;
@@ -102,8 +100,8 @@ set(gca,'xTick',Ticks);
 set(gca,'yTick',Ticks);
 xlabel('pixels','FontSize', FontSize);
 ylabel('pixels','FontSize', FontSize);
-save_plot(fig,'pic/fig_affin.png');
-imwrite(frame_affin, 'pic/frame_affin.png');
+save_plot(fig,'../pic/fig_affin.png');
+imwrite(frame_affin, '../pic/frame_affin.png');
 
 fig = figure();
 hold on;
@@ -117,7 +115,7 @@ set(gca,'xTick',Ticks);
 set(gca,'yTick',Ticks);
 xlabel('pixels','FontSize', FontSize);
 ylabel('pixels','FontSize', FontSize);
-save_plot(fig,'pic/fig_d.png');
+save_plot(fig,'../pic/fig_d.png');
 
 
 
